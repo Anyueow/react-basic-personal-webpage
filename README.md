@@ -1,70 +1,197 @@
-# Getting Started with Create React App
+```markdown
+# Ananya Shah's Personal Webpage
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a personal webpage for Ananya Shah, showcasing her experiences, skills, projects, and more. The webpage is built using React and includes a collapsible timeline for her resume, searchable experiences, and links to her social media and GitHub projects.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Installation](#installation)
+- [Usage](#usage)
+- [Components](#components)
+- [Styling](#styling)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To set up the project locally, follow these steps:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. **Clone the repository:**
 
-### `npm test`
+```bash
+git clone https://github.com/your-username/your-repository-name.git
+cd your-repository-name
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **Install dependencies:**
 
-### `npm run build`
+```bash
+npm install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. **Start the development server:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The webpage will be available at `http://localhost:3000`.
 
-### `npm run eject`
+## Usage
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Search Functionality
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- The resume section includes a search bar that allows you to filter experiences based on the search term entered.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Collapsible Timeline
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Each experience in the resume is collapsible. Click on a timeline node to expand or collapse the details.
 
-## Learn More
+## Components
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### `src/App.js`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This is the main component that includes the layout of the webpage. It imports and uses the following components:
 
-### Code Splitting
+- `Header`
+- `About`
+- `Resume`
+- `Skills`
+- `Projects`
+- `Education`
+- `Contact`
+- `Footer`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### `src/components/Header.js`
 
-### Analyzing the Bundle Size
+This component contains the header of the webpage, including the navigation links.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### `src/components/About.js`
 
-### Making a Progressive Web App
+This component contains the "About Me" section.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### `src/components/Resume.js`
 
-### Advanced Configuration
+This component contains the resume section with a collapsible timeline and search functionality.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### `src/components/Skills.js`
 
-### Deployment
+This component lists the skills.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### `src/components/Projects.js`
 
-### `npm run build` fails to minify
+This component showcases the projects.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### `src/components/Education.js`
+
+This component details the education history.
+
+### `src/components/Contact.js`
+
+This component contains the contact information and links to social media.
+
+### `src/components/Footer.js`
+
+This component contains the footer of the webpage.
+
+## Styling
+
+The styling is done using CSS files located in the `src/components` directory. Each component has its own CSS file.
+
+### `src/components/Resume.css`
+
+Contains the styles for the resume section, including the search bar, timeline, and collapsible details.
+
+### Example CSS for `Resume.css`
+
+```css
+.search-bar {
+    width: 100%;
+    padding: 10px;
+    margin: 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.timeline {
+    position: relative;
+    padding: 20px 0;
+    margin: 20px 0;
+    list-style: none;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #50b3a2;
+    left: 20px;
+    margin-left: -1.5px;
+}
+
+.timeline-node {
+    margin-bottom: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.timeline-node .timeline-content {
+    padding: 10px 20px;
+    background: #e2e2e2;
+    border-radius: 5px;
+    position: relative;
+    left: 40px;
+    width: calc(100% - 60px);
+}
+
+.timeline-node .timeline-content h3 {
+    margin: 0 0 10px;
+}
+
+.timeline-node .timeline-content p {
+    margin: 0;
+}
+
+.timeline-node .timeline-details {
+    padding: 10px 20px;
+    background: #f4f4f4;
+    border-left: 2px solid #50b3a2;
+    position: relative;
+    left: 40px;
+    width: calc(100% - 60px);
+}
+
+.timeline-node .timeline-details ul {
+    margin: 10px 0 0 0;
+    padding: 0 0 0 20px;
+    list-style: disc;
+}
+
+.timeline-node .timeline-details ul li {
+    margin-bottom: 5px;
+}
+
+.timeline-node::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #50b3a2;
+    top: 20px;
+    left: 16px;
+}
+```
+
+## Contributing
+
+Contributions are welcome! Please fork this repository and submit a pull request for any changes you would like to make.
+
+1. Fork the repository.
+2. Create your feature branch: `git checkout -b my-new-feature`.
+3. Commit your changes: `git commit -am 'Add some feature'`.
+4. Push to the branch: `git push origin my-new-feature`.
+5. Submit a pull request.
