@@ -1,4 +1,4 @@
-```markdown
+
 # Ananya Shah's Personal Webpage
 
 This is a personal webpage for Ananya Shah, showcasing her experiences, skills, projects, and more. The webpage is built using React and includes a collapsible timeline for her resume, searchable experiences, and links to her social media and GitHub projects.
